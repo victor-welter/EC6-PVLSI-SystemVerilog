@@ -1,0 +1,5 @@
+|exe_02
+btn_n_i => led_n_o.DATAIN
+led_n_o << btn_n_i.DB_MAX_OUTPUT_PORT_TYPE
+
+

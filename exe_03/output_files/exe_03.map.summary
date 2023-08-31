@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Aug 28 20:46:19 2023
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : exe_03
+Top-level Entity Name : exe_03
+Family : Cyclone IV E
+Total logic elements : 6
+    Total combinational functions : 6
+    Dedicated logic registers : 5
+Total registers : 5
+Total pins : 7
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,37 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led_n_o[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led_n_o[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led_n_o[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led_n_o[3]",
+					"strict" : false
+				},
+				{
+					"name" : "btn_n_i",
+					"strict" : false
+				},
+				{
+					"name" : "clk_i",
+					"strict" : false
+				},
+				{
+					"name" : "rst_ni",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

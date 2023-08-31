@@ -1,0 +1,33 @@
+|hello_world
+clock => digit[0].CLK
+clock => digit[1].CLK
+clock => digit[2].CLK
+clock => digit[3].CLK
+clock => digit[4].CLK
+clock => digit[5].CLK
+clock => digit[6].CLK
+clock => digit[7].CLK
+clock => digit[8].CLK
+clock => digit[9].CLK
+clock => digit[10].CLK
+clock => digit[11].CLK
+clock => digit[12].CLK
+clock => digit[13].CLK
+clock => digit[14].CLK
+clock => digit[15].CLK
+clock => digit[16].CLK
+clock => digit[17].CLK
+clock => digit[18].CLK
+clock => digit[19].CLK
+clock => digit[20].CLK
+clock => digit[21].CLK
+clock => digit[22].CLK
+clock => digit[23].CLK
+clock => digit[24].CLK
+clock => digit[25].CLK
+led1 << digit[25].DB_MAX_OUTPUT_PORT_TYPE
+led2 << digit[24].DB_MAX_OUTPUT_PORT_TYPE
+led3 << digit[23].DB_MAX_OUTPUT_PORT_TYPE
+led4 << digit[22].DB_MAX_OUTPUT_PORT_TYPE
+
+
