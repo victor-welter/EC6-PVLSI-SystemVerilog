@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Oct  2 19:02:08 2023
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : trab_01
+Top-level Entity Name : trab_01_top
+Family : Cyclone IV E
+Total logic elements : 215
+    Total combinational functions : 191
+    Dedicated logic registers : 164
+Total registers : 164
+Total pins : 11
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

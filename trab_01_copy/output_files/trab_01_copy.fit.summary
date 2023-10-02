@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Sep 26 18:44:41 2023
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : trab_01_copy
+Top-level Entity Name : trab_01_copy_top
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 207 / 6,272 ( 3 % )
+    Total combinational functions : 191 / 6,272 ( 3 % )
+    Dedicated logic registers : 164 / 6,272 ( 3 % )
+Total registers : 164
+Total pins : 11 / 92 ( 12 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
