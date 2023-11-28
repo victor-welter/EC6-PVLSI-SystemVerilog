@@ -1,0 +1,7 @@
+
+State Machine - |exe_01|state
+Name state.D state.C state.B state.A 
+state.A 0 0 0 0 
+state.B 0 0 1 1 
+state.C 0 1 0 1 
+state.D 1 0 0 1 

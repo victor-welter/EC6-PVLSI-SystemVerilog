@@ -1,0 +1,510 @@
+Analysis & Synthesis report for trab_03
+Mon Nov 27 18:45:10 2023
+Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |trab_03|ir:ir_n|state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: debouncer:deb_inc
+ 15. Parameter Settings for User Entity Instance: debouncer:deb_dec
+ 16. Parameter Settings for User Entity Instance: debouncer:deb_buz
+ 17. Parameter Settings for User Entity Instance: display_control:display|display_mux:mux
+ 18. Port Connectivity Checks: "display_control:display|display_mux:mux"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Nov 27 18:45:10 2023          ;
+; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
+; Revision Name                      ; trab_03                                        ;
+; Top-level Entity Name              ; trab_03                                        ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 402                                            ;
+;     Total combinational functions  ; 367                                            ;
+;     Dedicated logic registers      ; 229                                            ;
+; Total registers                    ; 229                                            ;
+; Total pins                         ; 23                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                            ; trab_03            ; trab_03            ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------+---------+
+; trab_03.sv                       ; yes             ; User SystemVerilog HDL File        ; C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/trab_03.sv         ;         ;
+; synchronizer.sv                  ; yes             ; User SystemVerilog HDL File        ; C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/synchronizer.sv    ;         ;
+; led_control.sv                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/led_control.sv     ;         ;
+; ir.sv                            ; yes             ; User SystemVerilog HDL File        ; C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/ir.sv              ;         ;
+; debouncer.sv                     ; yes             ; User SystemVerilog HDL File        ; C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/debouncer.sv       ;         ;
+; buzzer_control.sv                ; yes             ; User SystemVerilog HDL File        ; C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/buzzer_control.sv  ;         ;
+; buzzer.sv                        ; yes             ; User SystemVerilog HDL File        ; C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/buzzer.sv          ;         ;
+; display_control.sv               ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/display_control.sv ;         ;
+; display_mux.sv                   ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/display_mux.sv     ;         ;
+; display_decoder.sv               ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/display_decoder.sv ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 402         ;
+;                                             ;             ;
+; Total combinational functions               ; 367         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 165         ;
+;     -- 3 input functions                    ; 39          ;
+;     -- <=2 input functions                  ; 163         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 245         ;
+;     -- arithmetic mode                      ; 122         ;
+;                                             ;             ;
+; Total registers                             ; 229         ;
+;     -- Dedicated logic registers            ; 229         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 23          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clk_i~input ;
+; Maximum fan-out                             ; 229         ;
+; Total fan-out                               ; 2014        ;
+; Average fan-out                             ; 3.14        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                            ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                          ; Entity Name     ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------+-----------------+--------------+
+; |trab_03                            ; 367 (1)             ; 229 (0)                   ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |trab_03                                                     ; trab_03         ; work         ;
+;    |buzzer:buz|                     ; 44 (44)             ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|buzzer:buz                                          ; buzzer          ; work         ;
+;    |buzzer_control:buzzerControl|   ; 29 (29)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|buzzer_control:buzzerControl                        ; buzzer_control  ; work         ;
+;    |debouncer:deb_buz|              ; 31 (31)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|debouncer:deb_buz                                   ; debouncer       ; work         ;
+;    |debouncer:deb_dec|              ; 31 (31)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|debouncer:deb_dec                                   ; debouncer       ; work         ;
+;    |debouncer:deb_inc|              ; 31 (31)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|debouncer:deb_inc                                   ; debouncer       ; work         ;
+;    |display_control:display|        ; 83 (12)             ; 28 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|display_control:display                             ; display_control ; work         ;
+;       |display_decoder:cen_decoder| ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|display_control:display|display_decoder:cen_decoder ; display_decoder ; work         ;
+;       |display_decoder:uni_decoder| ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|display_control:display|display_decoder:uni_decoder ; display_decoder ; work         ;
+;       |display_mux:mux|             ; 57 (57)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|display_control:display|display_mux:mux             ; display_mux     ; work         ;
+;    |ir:ir_n|                        ; 80 (80)             ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|ir:ir_n                                             ; ir              ; work         ;
+;    |led_control:ledControl|         ; 37 (37)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|led_control:ledControl                              ; led_control     ; work         ;
+;    |synchronizer:sync_btn_buz|      ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|synchronizer:sync_btn_buz                           ; synchronizer    ; work         ;
+;    |synchronizer:sync_btn_dec|      ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|synchronizer:sync_btn_dec                           ; synchronizer    ; work         ;
+;    |synchronizer:sync_btn_inc|      ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|synchronizer:sync_btn_inc                           ; synchronizer    ; work         ;
+;    |synchronizer:sync_ir|           ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |trab_03|synchronizer:sync_ir                                ; synchronizer    ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------+
+; State Machine - |trab_03|ir:ir_n|state                                                          ;
++------------------+----------------+------------+------------------+----------------+------------+
+; Name             ; state.TRANSMIT ; state.DATA ; state.LEAD_4_5MS ; state.LEAD_9MS ; state.IDLE ;
++------------------+----------------+------------+------------------+----------------+------------+
+; state.IDLE       ; 0              ; 0          ; 0                ; 0              ; 0          ;
+; state.LEAD_9MS   ; 0              ; 0          ; 0                ; 1              ; 1          ;
+; state.LEAD_4_5MS ; 0              ; 0          ; 1                ; 0              ; 1          ;
+; state.DATA       ; 0              ; 1          ; 0                ; 0              ; 1          ;
+; state.TRANSMIT   ; 1              ; 0          ; 0                ; 0              ; 1          ;
++------------------+----------------+------------+------------------+----------------+------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                           ;
++-----------------------------------------------------+----------------------------------------+
+; Register name                                       ; Reason for Removal                     ;
++-----------------------------------------------------+----------------------------------------+
+; buzzer_control:buzzerControl|cmp_freq_o[0,1,18..21] ; Stuck at GND due to stuck port data_in ;
+; buzzer_control:buzzerControl|freq_bcd_o[4][3]       ; Stuck at GND due to stuck port data_in ;
+; buzzer_control:buzzerControl|freq_bcd_o[4][2]       ; Stuck at GND due to stuck port data_in ;
+; buzzer_control:buzzerControl|freq_bcd_o[4][1]       ; Stuck at GND due to stuck port data_in ;
+; buzzer_control:buzzerControl|freq_bcd_o[2][3]       ; Stuck at GND due to stuck port data_in ;
+; buzzer_control:buzzerControl|freq_bcd_o[1][3]       ; Stuck at GND due to stuck port data_in ;
+; buzzer_control:buzzerControl|freq_bcd_o[0][3]       ; Stuck at GND due to stuck port data_in ;
+; display_control:display|dec[3]                      ; Stuck at GND due to stuck port data_in ;
+; buzzer:buz|cmp[0,1,18..21]                          ; Stuck at GND due to stuck port data_in ;
+; display_control:display|mil[1..3]                   ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 22              ;                                        ;
++-----------------------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                        ;
++-----------------------------------------------+---------------------------+----------------------------------------+
+; Register name                                 ; Reason for Removal        ; Registers Removed due to This Register ;
++-----------------------------------------------+---------------------------+----------------------------------------+
+; buzzer_control:buzzerControl|cmp_freq_o[21]   ; Stuck at GND              ; buzzer:buz|cmp[21]                     ;
+;                                               ; due to stuck port data_in ;                                        ;
+; buzzer_control:buzzerControl|cmp_freq_o[20]   ; Stuck at GND              ; buzzer:buz|cmp[20]                     ;
+;                                               ; due to stuck port data_in ;                                        ;
+; buzzer_control:buzzerControl|cmp_freq_o[19]   ; Stuck at GND              ; buzzer:buz|cmp[19]                     ;
+;                                               ; due to stuck port data_in ;                                        ;
+; buzzer_control:buzzerControl|cmp_freq_o[18]   ; Stuck at GND              ; buzzer:buz|cmp[18]                     ;
+;                                               ; due to stuck port data_in ;                                        ;
+; buzzer_control:buzzerControl|cmp_freq_o[1]    ; Stuck at GND              ; buzzer:buz|cmp[1]                      ;
+;                                               ; due to stuck port data_in ;                                        ;
+; buzzer_control:buzzerControl|cmp_freq_o[0]    ; Stuck at GND              ; buzzer:buz|cmp[0]                      ;
+;                                               ; due to stuck port data_in ;                                        ;
+; buzzer_control:buzzerControl|freq_bcd_o[4][3] ; Stuck at GND              ; display_control:display|mil[3]         ;
+;                                               ; due to stuck port data_in ;                                        ;
+; buzzer_control:buzzerControl|freq_bcd_o[4][2] ; Stuck at GND              ; display_control:display|mil[2]         ;
+;                                               ; due to stuck port data_in ;                                        ;
+; buzzer_control:buzzerControl|freq_bcd_o[4][1] ; Stuck at GND              ; display_control:display|mil[1]         ;
+;                                               ; due to stuck port data_in ;                                        ;
+; buzzer_control:buzzerControl|freq_bcd_o[2][3] ; Stuck at GND              ; display_control:display|dec[3]         ;
+;                                               ; due to stuck port data_in ;                                        ;
++-----------------------------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 229   ;
+; Number of registers using Synchronous Clear  ; 46    ;
+; Number of registers using Synchronous Load   ; 69    ;
+; Number of registers using Asynchronous Clear ; 224   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 24    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------+
+; Inverted Register Statistics                          ;
++---------------------------------------------+---------+
+; Inverted Register                           ; Fan out ;
++---------------------------------------------+---------+
+; buzzer_control:buzzerControl|cmp_freq_o[4]  ; 1       ;
+; buzzer_control:buzzerControl|cmp_freq_o[7]  ; 1       ;
+; buzzer_control:buzzerControl|cmp_freq_o[12] ; 1       ;
+; buzzer_control:buzzerControl|cmp_freq_o[14] ; 1       ;
+; buzzer_control:buzzerControl|cmp_freq_o[15] ; 1       ;
+; buzzer_control:buzzerControl|cmp_freq_o[16] ; 1       ;
+; buzzer_control:buzzerControl|cmp_freq_o[17] ; 1       ;
+; Total number of inverted registers = 7      ;         ;
++---------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |trab_03|ir:ir_n|data_cnt[1]                          ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |trab_03|debouncer:deb_inc|counter[20]                ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |trab_03|debouncer:deb_dec|counter[6]                 ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |trab_03|debouncer:deb_buz|counter[6]                 ;
+; 258:1              ; 4 bits    ; 688 LEs       ; 64 LEs               ; 624 LEs                ; Yes        ; |trab_03|led_control:ledControl|led_o[3]              ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |trab_03|display_control:display|display_mux:mux|Mux1 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:deb_inc ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; NBITS          ; 22    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:deb_dec ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; NBITS          ; 22    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:deb_buz ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; NBITS          ; 22    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: display_control:display|display_mux:mux ;
++----------------+----------+----------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                     ;
++----------------+----------+----------------------------------------------------------+
+; SEG_CNT        ; 4        ; Signed Integer                                           ;
+; FPGA_FREQ      ; 50000000 ; Signed Integer                                           ;
++----------------+----------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "display_control:display|display_mux:mux" ;
++------------+-------+----------+-------------------------------------+
+; Port       ; Type  ; Severity ; Details                             ;
++------------+-------+----------+-------------------------------------+
+; en_i[2..0] ; Input ; Info     ; Stuck at VCC                        ;
+; seg_i[0]   ; Input ; Info     ; Stuck at GND                        ;
++------------+-------+----------+-------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 23                          ;
+; cycloneiii_ff         ; 229                         ;
+;     CLR               ; 96                          ;
+;     CLR SCLR          ; 41                          ;
+;     CLR SLD           ; 66                          ;
+;     ENA CLR           ; 16                          ;
+;     ENA CLR SCLR      ; 5                           ;
+;     ENA SLD           ; 3                           ;
+;     plain             ; 2                           ;
+; cycloneiii_lcell_comb ; 383                         ;
+;     arith             ; 122                         ;
+;         2 data inputs ; 120                         ;
+;         3 data inputs ; 2                           ;
+;     normal            ; 261                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 33                          ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 37                          ;
+;         4 data inputs ; 165                         ;
+;                       ;                             ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 3.04                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+    Info: Processing started: Mon Nov 27 18:44:30 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off trab_03 -c trab_03
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file trab_03.sv
+    Info (12023): Found entity 1: trab_03 File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/trab_03.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file synchronizer.sv
+    Info (12023): Found entity 1: synchronizer File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/synchronizer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file led_control.sv
+    Info (12023): Found entity 1: led_control File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/led_control.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ir.sv
+    Info (12023): Found entity 1: ir File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/ir.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file debouncer.sv
+    Info (12023): Found entity 1: debouncer File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/debouncer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file buzzer_control.sv
+    Info (12023): Found entity 1: buzzer_control File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/buzzer_control.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file buzzer.sv
+    Info (12023): Found entity 1: buzzer File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/buzzer.sv Line: 1
+Info (12127): Elaborating entity "trab_03" for the top level hierarchy
+Info (12128): Elaborating entity "synchronizer" for hierarchy "synchronizer:sync_btn_inc" File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/trab_03.sv Line: 27
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:deb_inc" File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/trab_03.sv Line: 61
+Info (12128): Elaborating entity "ir" for hierarchy "ir:ir_n" File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/trab_03.sv Line: 86
+Info (12128): Elaborating entity "led_control" for hierarchy "led_control:ledControl" File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/trab_03.sv Line: 102
+Info (12128): Elaborating entity "buzzer_control" for hierarchy "buzzer_control:buzzerControl" File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/trab_03.sv Line: 113
+Info (12128): Elaborating entity "buzzer" for hierarchy "buzzer:buz" File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/trab_03.sv Line: 121
+Warning (12125): Using design file display_control.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: display_control File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/display_control.sv Line: 1
+Info (12128): Elaborating entity "display_control" for hierarchy "display_control:display" File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/trab_03.sv Line: 129
+Warning (12125): Using design file display_mux.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: display_mux File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/display_mux.sv Line: 1
+Info (12128): Elaborating entity "display_mux" for hierarchy "display_control:display|display_mux:mux" File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/display_control.sv Line: 29
+Warning (12125): Using design file display_decoder.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: display_decoder File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/display_decoder.sv Line: 1
+Info (12128): Elaborating entity "display_decoder" for hierarchy "display_control:display|display_decoder:uni_decoder" File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/display_control.sv Line: 64
+Info (13000): Registers with preset signals will power-up high File: C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/buzzer_control.sv Line: 19
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/output_files/trab_03.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 427 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 404 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4765 megabytes
+    Info: Processing ended: Mon Nov 27 18:45:10 2023
+    Info: Elapsed time: 00:00:40
+    Info: Total CPU time (on all processors): 00:00:53
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Cliente/Documents/Git/EC6-PVLSI-SystemVerilog/trab_03/output_files/trab_03.map.smsg.
+
+

@@ -1,0 +1,41 @@
+|exe_09
+clk_i => pressed.CLK
+clk_i => led[0].CLK
+clk_i => led[1].CLK
+clk_i => led[2].CLK
+clk_i => led[3].CLK
+rst_n_i => pressed.ACLR
+rst_n_i => led[0].ACLR
+rst_n_i => led[1].ACLR
+rst_n_i => led[2].ACLR
+rst_n_i => led[3].ACLR
+btn_n_i => always0.IN1
+btn_n_i => pressed.DATAIN
+dig_o <= <GND>
+led_n_o[0] <= led[0].DB_MAX_OUTPUT_PORT_TYPE
+led_n_o[1] <= led[1].DB_MAX_OUTPUT_PORT_TYPE
+led_n_o[2] <= led[2].DB_MAX_OUTPUT_PORT_TYPE
+led_n_o[3] <= led[3].DB_MAX_OUTPUT_PORT_TYPE
+display_n_o[0] <= DisplayDecoder:decoder.seg_o
+display_n_o[1] <= DisplayDecoder:decoder.seg_o
+display_n_o[2] <= DisplayDecoder:decoder.seg_o
+display_n_o[3] <= DisplayDecoder:decoder.seg_o
+display_n_o[4] <= DisplayDecoder:decoder.seg_o
+display_n_o[5] <= DisplayDecoder:decoder.seg_o
+display_n_o[6] <= DisplayDecoder:decoder.seg_o
+
+
+|exe_09|DisplayDecoder:decoder
+bcd_i[0] => Decoder0.IN3
+bcd_i[1] => Decoder0.IN2
+bcd_i[2] => Decoder0.IN1
+bcd_i[3] => Decoder0.IN0
+seg_o[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg_o[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg_o[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg_o[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg_o[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg_o[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg_o[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

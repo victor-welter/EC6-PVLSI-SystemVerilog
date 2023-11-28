@@ -1,0 +1,8 @@
+
+State Machine - |trab_03|ir:ir_n|state
+Name state.TRANSMIT state.DATA state.LEAD_4_5MS state.LEAD_9MS state.IDLE 
+state.IDLE 0 0 0 0 0 
+state.LEAD_9MS 0 0 0 1 1 
+state.LEAD_4_5MS 0 0 1 0 1 
+state.DATA 0 1 0 0 1 
+state.TRANSMIT 1 0 0 0 1 
